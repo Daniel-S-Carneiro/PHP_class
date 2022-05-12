@@ -1,27 +1,27 @@
 <?php
+// this deve ser utilizado para referenciar a instância corrente;
 
 class A {
     function example() {
-        echo "I am A::example() and provide basic functionality.<br />\n";
+        echo "Eu sou a Class A::exemplo().<br />\n";
     }
 }
 
 class B extends A {
     function example() {
-        echo "I am B::example() and provide additional functionality.<br />\n";
+        echo "Eu sou a Class B::exemplo().<br />\n";
     }
 
     function main() {
         $this->example();
-        parent::example();
+        //Referência à própria instância, tudo que pertence a instância estará disponível em $this.
     }
 }
 
 $b = new B;
 
-// This will call B::example(), which will in turn call A::example().
+// Chamando Class B::exemplo().
 $b->main();
 
 // Saída:
-// I am B::example() and provide additional functionality.
-// I am A::example() and provide basic functionality.
+// Class B::exemplo().

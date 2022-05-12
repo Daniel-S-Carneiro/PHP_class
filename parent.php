@@ -1,23 +1,25 @@
 <?php
+// parent deve ser utilizado quando precisa referenciar a classe pai;
 
 class A {
     function example() {
-        echo "I am A::example() and provide basic functionality.<br />\n";
+        echo "Eu sou a Class A::exemplo().<br />\n";
     }
 }
 
 class B extends A {
     function example() {
-        echo "I am B::example() and provide additional functionality.<br />\n";
+        echo "Eu sou a Class B::exemplo().<br />\n";
         parent::example();
+        //Faz referência a classe pai que foi herdada pela classe atual.
     }
 }
 
 $b = new B;
 
-// This will call B::example(), which will in turn call A::example().
+// Chamando Class B::exemplo(), que por sua vez chamará A::example().
 $b->example();
 
 // Saída:
-// I am B::example() and provide additional functionality.
-// I am A::example() and provide basic functionality.
+// Class A::exemplo().
+// Class B::exemplo().
